@@ -1,0 +1,45 @@
+.relative_div{
+    position: relative!important;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    overflow: hidden!important;
+}
+.left_fixed{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    width: 80px;
+    z-index: 99;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+#logo_right_button a{
+    font-size: 32px;
+    display: flex!important;
+    flex-direction: column!important;
+}
+#mobile_nav_icon{
+    color: #fff;
+    transform: rotate(90deg);
+    width: 180px;
+    margin-right: -50px;
+}
+body.js_nav .mobile_menu_wrapper, html[data-menu=leftmenu] body.js_nav .mobile_menu_wrapper {
+    -webkit-transform: translate(calc(100% - 100%), 0px);
+    -ms-transform: translate(calc(100% - 100%), 0px);
+    transform: translate(calc(100% - 100%), 0px);
+    right: 0;
+    right: 0;
+    width: 100vw;
+    background: #fff;
+    height: 100vh;
+    overflow: hidden;
+}
+@media screen and (max-width: 768px){
+    #logo_right_button a{
+        margin-top: 200px;
+    }
+}
