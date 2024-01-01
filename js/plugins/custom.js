@@ -192,51 +192,7 @@ jQuery(document).ready(function(){
 			   }
 		   }
 		});
-		
-		if(jQuery('#tg_smart_fixed_menu').val()==1 && jQuery('html').data('style') != 'fullscreen'  && jQuery('html').data('style') != 'fullscreen_white')
-		{
-			//Smart sticky menu
-			if(!is_touch_device())
-			{
-			    var lastScrollTop = 0;
-			    jQuery(window).scroll(function(event){
-			       var st = jQuery(this).scrollTop();
-			       if (st > lastScrollTop && st > 0){
-			           jQuery('.top_bar').removeClass('scroll_up');
-			           jQuery('.header_style_wrapper').removeClass('scroll_up');
-			           jQuery('.header_style_wrapper').addClass('scroll_down');
-			       } else {
-			          jQuery('.top_bar').addClass('scroll_up');
-			          jQuery('.header_style_wrapper').addClass('scroll_up');
-			          jQuery('.header_style_wrapper').removeClass('scroll_down');
-			       }
-			       lastScrollTop = st;
-			       
-			       jQuery('.header_style_wrapper').attr('data-st', st);
-			       jQuery('.header_style_wrapper').attr('data-lastscrolltop', lastScrollTop);
-			    });
-			}
-			else
-			{
-			    var lastY;
-			    jQuery(document).bind('touchmove', function (e){
-			         var currentY = e.originalEvent.touches[0].clientY;
 
-			         if(currentY > 200){
-			         	jQuery('.top_bar').addClass('scroll_up');
-			            jQuery('.header_style_wrapper').addClass('scroll_up');
-			            jQuery('.header_style_wrapper').removeClass('scroll_down');
-			            
-			         } else {
-			            jQuery('.top_bar').removeClass('scroll_up');
-			            jQuery('.header_style_wrapper').removeClass('scroll_up');
-			            jQuery('.header_style_wrapper').addClass('scroll_down');
-			         }
-			         
-			         jQuery('.header_style_wrapper').attr('data-pos', currentY);
-			    });
-			}
-		}
 	} //If not left menu layout
 	
 	jQuery(document).mouseenter(function()
@@ -272,6 +228,17 @@ jQuery(document).ready(function(){
 	var overlayEffect = jQuery('#tg_sidemenu_overlay_effect').val();
 	
 	jQuery('#mobile_nav_icon').on( 'click', function() {
+		jQuery('body').toggleClass('js_nav');
+		jQuery('body').toggleClass(overlayEffect);
+		jQuery('#close_mobile_menu').addClass('open');
+		
+		if(is_touch_device())
+		{
+			jQuery('body.js_nav').css('overflow', 'auto');
+		}
+	});
+
+	jQuery('#mobile_nav_icon2').on( 'click', function() {
 		jQuery('body').toggleClass('js_nav');
 		jQuery('body').toggleClass(overlayEffect);
 		jQuery('#close_mobile_menu').addClass('open');

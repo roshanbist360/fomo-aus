@@ -1,3 +1,13 @@
+.header_style_wrapper {
+    width: 100%;
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    display: block;
+}
+
 .relative_div{
     position: relative!important;
     height: 100%;
@@ -11,13 +21,22 @@
     top: 0;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    width: 80px;
+    width: 50px;
     z-index: 99;
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
 }
+.custom_hero_text{
+    display: flex;
+    justify-content: center;
+}
+.hero_text{
+    width: 60%;
+    text-align: center;
+    font-weight: 600;
+}
 #logo_right_button a{
-    font-size: 32px;
+    font-size: 28px;
     display: flex!important;
     flex-direction: column!important;
 }
@@ -25,7 +44,7 @@
     color: #fff;
     transform: rotate(90deg);
     width: 180px;
-    margin-right: -50px;
+    margin-right: -65px;
 }
 body.js_nav .mobile_menu_wrapper, html[data-menu=leftmenu] body.js_nav .mobile_menu_wrapper {
     -webkit-transform: translate(calc(100% - 100%), 0px);
@@ -38,8 +57,73 @@ body.js_nav .mobile_menu_wrapper, html[data-menu=leftmenu] body.js_nav .mobile_m
     height: 100vh;
     overflow: hidden;
 }
+.btn_opn{
+    display: none!important;
+}
 @media screen and (max-width: 768px){
     #logo_right_button a{
         margin-top: 200px;
+    }
+    .hero_text{
+        width: 80%;
+    }
+}
+
+
+.hero_service_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 98%;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+.hero_service_list .serv{
+   margin: 15px;
+}
+.hero_service_list a{
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    background: rgba(0,0,0, 1);
+    padding: 10px 15px;
+}
+.hero_service_list a:hover{
+    background: rgb(9, 83, 156);
+}
+
+@media screen and (max-width: 576px){
+    .hero_service_list{
+        display: block;
+        margin-left: 0px;
+    }
+    .hero_service_list a{
+        font-size: 1rem;
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0);
+        padding: 0px;
+    }
+    .left_fixed{
+      display: none;
+    }
+    .btn_opn{
+        display: block!important;
+    }
+    #mobile_nav_icon2{
+        color: #fff;
+        position: absolute;
+        right: 0;
+        top: 25px;
+    }
+    .top_bar.hasbg #mobile_nav_icon {
+        border-color: #fff;
+        margin-left: -20px;
+        margin-top: 15px;
+        font-size: 20px;
+    }
+    .hero_text{
+        width: 100%;
+        margin-top: 25px;
+        font-size: 24px;
     }
 }
